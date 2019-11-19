@@ -1,8 +1,20 @@
+4.0.1 Release notes (2019-11-19)
+=============================================================
+
+### Enhancements
+* Support Swift 5.0
+* switch panGesture.state has default
+* renamed isTargetViewController
+
+### Bugfixes
+* None.
+
+
 4.0.0 Release notes (2017-10-31)
 =============================================================
 
 ### Enhancements
-* Support Swift4.0
+* Support Swift 4.0
 
 ### Bugfixes
 * None.

@@ -1,7 +1,8 @@
 //
 //  SlideMenuController.swift
 //
-//  Created by Yuji Hato on 12/3/14.
+//  Created by Yuji Hato on 12/3/2014
+//  Renamed isTagetViewController -> isTargetViewController by Thomas Bechtum on 19-NOV-2019
 //
 
 import Foundation
@@ -340,7 +341,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    open func isTagetViewController() -> Bool {
+    open func isTargetViewController() -> Bool {
         // Function to determine the target ViewController
         // Please to override it if necessary
         return true
@@ -361,7 +362,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func handleLeftPanGesture(_ panGesture: UIPanGestureRecognizer) {
         
-        if !isTagetViewController() {
+        if !isTargetViewController() {
             return
         }
         
@@ -424,7 +425,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
                     track(.leftFlickClose)
 
                 }
-            case UIGestureRecognizer.State.failed, UIGestureRecognizer.State.possible:
+            default: // case UIGestureRecognizer.State.failed, UIGestureRecognizer.State.possible:
                 break
         }
         
@@ -441,7 +442,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func handleRightPanGesture(_ panGesture: UIPanGestureRecognizer) {
         
-        if !isTagetViewController() {
+        if !isTargetViewController() {
             return
         }
         
@@ -505,7 +506,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
                 
                 track(.rightFlickClose)
             }
-        case UIGestureRecognizer.State.failed, UIGestureRecognizer.State.possible:
+        default: // case UIGestureRecognizer.State.failed, UIGestureRecognizer.State.possible:
             break
         }
         

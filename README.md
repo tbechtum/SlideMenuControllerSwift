@@ -12,7 +12,6 @@ SlideMenuControllerSwift
 [![Downloads](https://img.shields.io/cocoapods/dt/SlideMenuControllerSwift.svg)](https://cocoapods.org/pods/SlideMenuControllerSwift)
 
 
-
 iOS Slide View based on iQON, Feedly, Google+, Ameba iPhone app.
 
 ![sample](Screenshots/SlideMenuControllerSwift3.gif)
@@ -129,10 +128,7 @@ func rightDidClose()
 ```
 
 ## Requirements
-Requires Swift4.0 and iOS 9.0 and ARC.
-If you are developing in the Swift1.1 ~ 3.2, please use branch of swift1.1 ~ 3.  
-If you want to use even iOS8.0, please to import the code directly.   
-If you want to use objective-c even iOS6.0, plesea use [SlideMenuControllerOC](https://github.com/Pluto-Y/SlideMenuControllerOC).
+Requires Swift 5.0 and iOS 9.0 and ARC.
 
 ## Features
 - Highly customizable
