@@ -901,7 +901,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
         if SlideMenuOptions.hideStatusBar {
             DispatchQueue.main.async(execute: {
                 if let window = UIApplication.shared.keyWindow {
-                    window.windowLevel = UIWindow.Level.statusBar + 1
+                    window.windowLevel = UIWindowLevelStatusBar + 1 // until iOS 8.0 UIWindow.Level.statusBar
                 }
             })
         }
@@ -911,7 +911,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
         if SlideMenuOptions.hideStatusBar {
             DispatchQueue.main.async(execute: {
                 if let window = UIApplication.shared.keyWindow {
-                    window.windowLevel = UIWindow.Level.normal
+                    window.windowLevel = UIWindowLevelNormal // window.windowLevel = UIWindow.Level.normal
                 }
             })
         }
@@ -921,10 +921,10 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
         if let viewController = targetViewController {
             viewController.view.frame = targetView.bounds
             
-            if (!children.contains(viewController)) {
-                addChild(viewController)
+            if (!childViewControllers.contains(viewController)) {
+                addChildViewController(viewController)
                 targetView.addSubview(viewController.view)
-                viewController.didMove(toParent: self)
+                viewController.didMove(toParentViewController: self)
             }
         }
     }
@@ -933,9 +933,9 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
     fileprivate func removeViewController(_ viewController: UIViewController?) {
         if let _viewController = viewController {
             _viewController.view.layer.removeAllAnimations()
-            _viewController.willMove(toParent: nil)
+            _viewController.willMove(toParentViewController: nil)
             _viewController.view.removeFromSuperview()
-            _viewController.removeFromParent()
+            _viewController.removeFromParentViewController()
         }
     }
     

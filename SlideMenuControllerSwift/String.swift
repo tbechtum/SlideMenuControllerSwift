@@ -3,6 +3,8 @@
 //  SlideMenuControllerSwift
 //
 //  Created by Yuji Hato on 1/22/15.
+//  Migrated Swift by Thomas Bechtum on 25-SEP-2020
+//
 //  Copyright (c) 2015 Yuji Hato. All rights reserved.
 //
 
@@ -14,10 +16,12 @@ extension String {
     }
     
     func substring(_ from: Int) -> String {
-        return self.substring(from: self.characters.index(self.startIndex, offsetBy: from))
+        
+        return String(self.suffix(from: self.index(self.startIndex, offsetBy: from))) // Thomas Bechtum on 25-SEP-2020
+        // return self.substring(from: self.index(self.startIndex, offsetBy: from)) // return self.substring(from: self.characters.index(self.startIndex, offsetBy: from))
     }
     
-    var length: Int {
+    /* var length: Int {
         return self.characters.count
-    }
+    } */
 }
