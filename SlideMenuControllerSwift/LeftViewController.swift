@@ -15,7 +15,7 @@ enum LeftMenu: Int {
     case nonMenu
 }
 
-protocol LeftMenuProtocol : class {
+protocol LeftMenuProtocol : AnyObject { // : class Using 'class' keyword for protocol inheritance is deprecated; use 'AnyObject' instead
     func changeViewController(_ menu: LeftMenu)
 }
 
